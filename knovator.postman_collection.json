@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "82cc6288-f05f-444a-b207-884ad20bd96e",
+		"name": "knovator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "11244911"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "home",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/"
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"dinesh\",\r\n    \"username\": \"dinesh\",\r\n    \"password\": \"dinesh\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/register"
+					},
+					"response": []
+				},
+				{
+					"name": "auth",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"dinesh\",\r\n    \"password\":\"dinesh\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/authenticate"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "post",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzAzMTkxZDA2ZGIzM2Y2ZDMyODljODciLCJpYXQiOjE2NjExNTExMDYsImV4cCI6MTY2MTc1NTkwNn0.PDOs3j9BKIZyFLnsgjlG3tFEGPwiE4tREesz7i3oZcc"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"my first post 1\",\r\n    \"body\":\"my first post try this\",\r\n    \"latitude\":\"27.2046° N\",\r\n    \"longitude\":\"77.4977° E\"\r\n\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/post/create"
+					},
+					"response": []
+				},
+				{
+					"name": "allpost",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzAzMTkxZDA2ZGIzM2Y2ZDMyODljODciLCJpYXQiOjE2NjExNTY5NDIsImV4cCI6MTY2MTc2MTc0Mn0.fx-v9UamhfQ0yqTBChOsmXauGae2KGu2V2Ngib4RZVg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/post/allpost"
+					},
+					"response": []
+				},
+				{
+					"name": "read",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzAzMTkxZDA2ZGIzM2Y2ZDMyODljODciLCJpYXQiOjE2NjExNTExMDYsImV4cCI6MTY2MTc1NTkwNn0.PDOs3j9BKIZyFLnsgjlG3tFEGPwiE4tREesz7i3oZcc"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"630337d3f9037d8d122e57eb\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/post/read"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzAzMTkxZDA2ZGIzM2Y2ZDMyODljODciLCJpYXQiOjE2NjExNTExMDYsImV4cCI6MTY2MTc1NTkwNn0.PDOs3j9BKIZyFLnsgjlG3tFEGPwiE4tREesz7i3oZcc"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"630333d985d2eb4e5d715e7a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/post/delete"
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzAzMTkxZDA2ZGIzM2Y2ZDMyODljODciLCJpYXQiOjE2NjExNTExMDYsImV4cCI6MTY2MTc1NTkwNn0.PDOs3j9BKIZyFLnsgjlG3tFEGPwiE4tREesz7i3oZcc"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"630337d3f9037d8d122e57eb\",\r\n    \"status\":\"Inactive\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/post/update"
+					},
+					"response": []
+				},
+				{
+					"name": "count active inactive",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzAzMTkxZDA2ZGIzM2Y2ZDMyODljODciLCJpYXQiOjE2NjExNTY5NDIsImV4cCI6MTY2MTc2MTc0Mn0.fx-v9UamhfQ0yqTBChOsmXauGae2KGu2V2Ngib4RZVg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/post/count"
+					},
+					"response": []
+				},
+				{
+					"name": "readlatlong",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MzAzMTkxZDA2ZGIzM2Y2ZDMyODljODciLCJpYXQiOjE2NjExNTY5NDIsImV4cCI6MTY2MTc2MTc0Mn0.fx-v9UamhfQ0yqTBChOsmXauGae2KGu2V2Ngib4RZVg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"latitude\": \"27.2046° N\",\r\n    \"longitude\": \"77.4977° E\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/post/readlatlong"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
